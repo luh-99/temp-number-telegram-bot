@@ -1,18 +1,18 @@
 import os
-import telegram
-from telegram.ext import Updater, CommandHandler, MessageHandler, filters
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
 # Get the bot token from the environment variable
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 # Create the Updater and pass in the bot token
-updater = Updater(TELEGRAM_TOKEN, use_context=True)
+updater = Updater(token=TELEGRAM_TOKEN)
 
 # Define command handlers
-def start(update, context):
+def start(update: Update, context: CallbackContext):
     update.message.reply_text("Hello! I am your bot.")
 
-def echo(update, context):
+def echo(update: Update, context: CallbackContext):
     update.message.reply_text(update.message.text)
 
 # Set up the command and message handlers
