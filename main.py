@@ -1,6 +1,6 @@
 import os
 import telegram
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, filters
 
 # Get the bot token from the environment variable
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
